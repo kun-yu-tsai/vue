@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="the-id">
+        <name number=10 name='Da'></name>
+        <name2 v-bind:post="post" v-bind:hello="message"></name2>
+    </div>
+    <script>
+        Vue.component("name", {
+            template: "<h1>Hello {{ number }}, {{ name + ' good mate'}}</h1>",
+            props: ['number', 'name'],
+
+        })
+        Vue.component("name2", {
+            props: ['post', 'hello'],
+            template:
+                `
+                <div>
+                    <h1>post: {{ post }}</h1>
+                    <h1>{{ hello }}</h1>
+                    <h1> hello {{ post.title }}</h1>
+                    <h2>456s</h2>
+                </div>
+            `
+        })
+        vm = new Vue({
+            el: "#the-id",
+            data: {
+                post: { title: "the-title", content: "abcde" },
+                message: "hello world."
+            }
+        })
+
+    </script>
+</body>
+
+</html>

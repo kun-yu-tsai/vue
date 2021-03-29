@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ppp" onclick="h3('david')">
+        Hello
+        I don't know.
+    </p>
+    <script>
+        // ppp.onclick = h1
+        // ppp.addEventListener("click", h2)
+        function h1(event){
+            alert('h1 ' + event.type + " " + event.currentTarget + ", " + event.clientX )
+        }
+        function h2(){
+            alert('h2')
+        }
+        function h3(name){
+            alert(name)
+        }
+    </script>
+</body>
+</html>

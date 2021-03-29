@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="abc">
+        <b3></b3>
+        <b3></b3>
+        <b3></b3>
+        <my-title title="good"></my-title>
+        <my-title title="good1"></my-title>
+        <my-title title="good2"></my-title>
+        <br>
+        <hr>
+        <my-title 
+            v-for="post in posts"
+            v-bind:title="post"
+        ></my-title>
+    </div>
+    <script>
+        Vue.component('b3',{
+            template: '<div><b> Hello !!!</b><h1>123</h1></div>'
+        })
+        Vue.component('my-title', {
+            props: ['title'],
+            template: '<b> {{ title }} </b><b> good </b>'
+        })
+        vm = new Vue({
+            el: "#abc",
+            data: {
+                posts: [
+                    'hello',
+                    'hello1',
+                    'hello2'
+                ]
+            }
+        })
+
+    </script>
+</body>
+</html>

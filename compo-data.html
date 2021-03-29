@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="abc">
+        <ddd></ddd>
+        <ddd></ddd>
+    </div>
+    <script>
+        Vue.component('ddd',{
+            template: "<div><b> number {{ count }} </b><button v-on:click='count++'>Click</button></div>",
+            data: function(){
+                return {
+                    count: 0
+                }
+            }
+        })
+        vm = new Vue({
+            el: "#abc"
+        })
+    </script>
+</body>
+</html>

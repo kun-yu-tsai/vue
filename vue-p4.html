@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">
+        <span v-once>{{ name }}</span>
+        <button v-bind:disabled="isButtonDisabled" onclick="alert('Hello world!')">Button</button>
+        <p v-if="seen">Now you see me</p>
+    </div>
+    <script>
+        vm = new Vue({
+            el: "#a",
+            data: {
+                name: "hello",
+                isButtonDisabled: "true",
+                seen: null
+            }
+        })
+    </script>
+</body>
+</html>

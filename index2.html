@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="my-style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+        <span :title="message">
+            See the title
+        </span>
+        <transition name="fade">
+            <b v-if="exist">Oh yeah</b>
+        </transition>
+        <ol>
+            <li v-for="book in books">
+                {{ book.name }}
+            </li>
+        </ol>
+        <button v-on:click="re1">Re111</button>
+        <input v-model="message">
+    </div>
+
+    <script>
+        var app = new Vue(
+            {
+                el: '#app',
+                data: {
+                    books: [
+                        { name: "St"},
+                        { name: "asd"},
+                        { name: "asdasdsds"}
+                    ],
+                    message: "Hello Vue!",
+                    exist: true
+                },
+                methods: {
+                    re1: function(){
+                        this.message = "goggogogo"
+                    }
+                }
+            }
+        )
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('hello')">BUTTON</button>
+    <div id="id1">
+        <c1 v-on:e123="count++"></c1>
+        {{ count }}
+        <div>
+            <c2 v-on:hello="count++"></c2>
+        </div>
+    </div>
+    <script>
+        Vue.component('c2',{
+            template: "<button v-on:click='$emit(`hello`)'>Oh yeah</button>"
+        })
+
+        Vue.component('c1',{
+            template: 
+            `
+                <div>
+                    <button v-on:click="$emit('e123')">Click me</button>
+                    <button v-on:click="c++">Click me2</button>
+                    number = {{ c }}
+                </div>
+            `,
+            data: function(){
+                return {
+                    c: 0
+                }
+            }
+        })
+        vm = new Vue({
+            el: "#id1",
+            data: {
+                count: 0
+            }
+        })
+    </script>
+    
+</body>
+</html>

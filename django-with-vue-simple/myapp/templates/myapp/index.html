@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="abc">
+        <b>[[ message ]]</b>
+        <br>
+        <b>[[ fromD ]]</b>
+        <ol>
+            {% for m in message %}
+            <li>123123 [[ m ]]</li>
+            {% endfor %}
+
+            <li v-for="m in message">
+                value [[ m ]]
+            </li>
+        </ol>
+    </div>
+    <script>
+        abc = new Vue({
+            delimiters: ["[[","]]"],
+            el: '#abc',
+            data: {
+                message: ["1","2","3"],
+                fromD: '{{ fff }}',
+            },
+        })
+    </script>
+</body>
+</html>

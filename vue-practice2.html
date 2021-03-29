@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="abc">{{ name }}</div>
+    <script>
+        data = { name: "hello" }
+
+        vm = new Vue({
+            data: data,
+            el: "#abc"
+        })
+
+        vm.$data === data
+        vm.$el === document.getElementById("abc")
+
+        vm.$watch('name', function (newV, oldV) {
+            console.log(`change from ${oldV} to ${newV}`)
+            // vm.name = "whaaaaat"
+        })
+    </script>
+</body>
+
+</html>
